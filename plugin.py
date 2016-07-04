@@ -3513,9 +3513,9 @@ class TriviaTime(callbacks.Plugin):
         pages = int(count / 3) + int(count % 3 > 0)
         page = max(1, min(page, pages))
         if self.registryValue('general.globalstats'):
-            edits = threadStorage.getMyEditTop3(page, username)
+            edits = threadStorage.getMyEditTop3(username, page)
         else:
-            edits = threadStorage.getMyEditTop3(page, username, channel=channel)
+            edits = threadStorage.getMyEditTop3(username, page, channel=channel)
             
         # Output list
         if count < 1:
@@ -3551,9 +3551,9 @@ class TriviaTime(callbacks.Plugin):
         pages = int(count / 3) + int(count % 3 > 0)
         page = max(1, min(page, pages))
         if self.registryValue('general.globalstats'):
-            edits = threadStorage.getNotMyEditTop3(page, username)
+            edits = threadStorage.getNotMyEditTop3(username, page)
         else:
-            edits = threadStorage.getNotMyEditTop3(page, username, channel=channel)
+            edits = threadStorage.getNotMyEditTop3(username, page, channel=channel)
             
         # Output list
         if count < 1:
